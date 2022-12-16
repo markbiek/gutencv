@@ -26,7 +26,9 @@ import { useBlockProps } from '@wordpress/block-editor';
  * @return {WPElement} Element to render.
  */
 export default function Edit( { attributes, setAttributes } ) {
+	const {work_details, new_work_details} = attributes;
 	const blockProps = useBlockProps();
+
 	return (
 		<div { ...blockProps }>
 			<label htmlFor="gutencv-company">Company</label>
@@ -50,6 +52,34 @@ export default function Edit( { attributes, setAttributes } ) {
 				value={ attributes.end_date }
 				onChange={ ( val ) => setAttributes( { end_date: val } ) }
 			/>
+			<div className="gutencv-work_details-wrap">
+				<h4>Work Details</h4>
+				{
+					work_details.length > 0 && (
+						<ul>
+							{
+								work_details.map((item, idx) => {
+									return (
+										<li key={idx}>
+											{item}
+										</li>
+									)
+								})
+							}
+						</ul>
+					)
+				}
+				<TextControl
+					onChange={(new_item) => setAttributes({new_work_details: new_item})}
+					value={new_work_details}
+					onKeyUp={(event) => {
+						if ('Enter' === event.key) {
+							work_details.push(new_work_details);
+							setAttributes({ work_details: work_details.slice(), new_work_details: '' });
+						}
+					}}
+				/>
+			</div>
 		</div>
 	);
 }

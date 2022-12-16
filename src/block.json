@@ -27,6 +27,15 @@
 			"type": "string",
 			"source": "text",
 			"selector": "div"
+		},
+		"work_details": {
+			"type": "array",
+			"source": "text",
+			"selector": "ul li",
+			"default": []
+		},
+		"new_work_detail": {
+			"type": "string"
 		}
 	},
 	"supports": {
