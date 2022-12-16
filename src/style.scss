@@ -5,13 +5,17 @@
  * Replace them with your own styles or remove the file completely.
  */
 
-@font-face {
-	font-family: Gilbert;
-	src: url(../assets/gilbert-color.otf);
-	font-weight: 700;
-}
-
 .wp-block-create-block-gutencv {
-	font-family: Gilbert, sans-serif;
-	font-size: 64px;
+	font-family: monospace;
+	font-size: 18px;
+
+	.gutencv-company {
+		padding-left: 1rem;
+		font-size: 16px;
+	}
+
+	.gutencv-date-wrap {
+		padding-left: 0.5rem;
+		font-size: 14px;
+	}
 }

@@ -29,9 +29,26 @@ export default function Edit( { attributes, setAttributes } ) {
 	const blockProps = useBlockProps();
 	return (
 		<div { ...blockProps }>
+			<label htmlFor="gutencv-company">Company</label>
 			<TextControl
-				value={ attributes.message }
-				onChange={ ( val ) => setAttributes( { message: val } ) }
+				id='gutencv-company'
+				value={ attributes.company }
+				onChange={ ( val ) => setAttributes( { company: val } ) }
+			/>
+			<label htmlFor="gutencv-title">Title</label>
+			<TextControl
+				value={ attributes.title }
+				onChange={ ( val ) => setAttributes( { title: val } ) }
+			/>
+			<label htmlFor="gutencv-start_date">Start Date</label>
+			<TextControl
+				value={ attributes.start_date }
+				onChange={ ( val ) => setAttributes( { start_date: val } ) }
+			/>
+			<label htmlFor="gutencv-end_date">End Date</label>
+			<TextControl
+				value={ attributes.end_date }
+				onChange={ ( val ) => setAttributes( { end_date: val } ) }
 			/>
 		</div>
 	);

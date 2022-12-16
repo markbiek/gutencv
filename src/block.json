@@ -3,12 +3,27 @@
 	"apiVersion": 2,
 	"name": "create-block/gutencv",
 	"version": "0.1.0",
-	"title": "Gutencv",
+	"title": "GutenCV",
 	"category": "text",
 	"icon": "flag",
-	"description": "A Gutenberg block to show your pride! This block enables you to type text and style it with the color font Gilbert from Type with Pride.",
+	"description": "A Gutenberg block to build CV/Resume entries.",
 	"attributes": {
-		"message": {
+		"company": {
+			"type": "string",
+			"source": "text",
+			"selector": "div"
+		},
+		"title": {
+			"type": "string",
+			"source": "text",
+			"selector": "div"
+		},
+		"start_date": {
+			"type": "string",
+			"source": "text",
+			"selector": "div"
+		},
+		"end_date": {
 			"type": "string",
 			"source": "text",
 			"selector": "div"

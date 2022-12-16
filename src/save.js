@@ -17,7 +17,17 @@ import { useBlockProps } from '@wordpress/block-editor';
  * @param {Object} props.attributes Available block attributes.
  * @return {WPElement} Element to render.
  */
-export default function save( { attributes } ) {
+export default function save( { attributes: { company, title, start_date, end_date } } ) {
 	const blockProps = useBlockProps.save();
-	return <div { ...blockProps }>{ attributes.message }</div>;
+	return <div {...blockProps}>
+		<span className="gutencv-title">{title}</span> &mdash;
+		<span className="gutencv-company">{company}</span>
+		<span className="gutencv-date-wrap">
+			(
+			<span className="gutencv-start_date">{start_date}</span>
+			&nbsp;-&nbsp;
+			<span className="gutencv-end_date">{end_date}</span>
+			)
+		</span>
+	</div>;
 }
